@@ -4,7 +4,7 @@
 A small attempt to make an ai chat app user interface in Flutter for Android and iOS.
 
 ## 🤓 Author(s)
-**john** [![Telegram Message](https://img.shields.io/badge/message%20@johnnybeatz-grey?style=social&logo=telegram)](https://t.me/johnnybeatz)
+**John** [![Telegram Message](https://img.shields.io/badge/message%20@johnnybeatz-grey?style=social&logo=telegram)](https://t.me/johnnybeatz)
 
 ## Ai Chat App UI in Flutter
 <img src="screens/full_ui.png"  />
