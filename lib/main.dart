@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       routes: {
         SigninPage.routeName: (context) => SigninPage(),
-        // Add route for loading screen if necessary
+        
       },
       debugShowCheckedModeBanner: false,
       title: 'Chat Demo',
