@@ -29,4 +29,4 @@ def chat(messages):
 
 #chat([{'role': 'user', 'parts': 'hi'},{'role': 'model', 'parts': 'hi'},{'role':"user","parts":"whats wrong!"}])
 #test_token('da1fc09c466130048abecd5671319bd97df44692')
-login(username="dawit",password="daw")
+login(username="user",password="pass")
