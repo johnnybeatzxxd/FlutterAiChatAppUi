@@ -14,7 +14,7 @@ A small attempt to make an ai chat app user interface in Flutter for Android and
 <img src="screens/ChatPage-light.jpg" height="500em" /> &nbsp;&nbsp;&nbsp;&nbsp; <img src="screens/ChatPage-dark.jpg" height="500em" />
 
 ### Login & Signup Screen
-<img src="screens/LoginPage-light" height="500em" /> &nbsp;&nbsp;&nbsp;&nbsp; <img src="screens/SignupPage-dark.jpg" height="500em" />
+<img src="screens/LoginPage-light.jpg" height="500em" /> &nbsp;&nbsp;&nbsp;&nbsp; <img src="screens/SignupPage-dark.jpg" height="500em" />
 
 ### Navigation & Instruction Screen
 <img src="screens/Navigation-dark.jpg" height="500em" />&nbsp;&nbsp;&nbsp;&nbsp; <img src="screens/InstructionPage-dark.jpg" height="500em" />
