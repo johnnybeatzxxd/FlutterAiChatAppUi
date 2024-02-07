@@ -2,15 +2,37 @@ import 'package:chat_app/ChatProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import "index.dart";
+import "package:lottie/lottie.dart";
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-void main() async {
+Future<void> _initDatabase() async {
   await Hive.initFlutter();
   var mybox = await Hive.openBox('Convo');
   await Hive.openBox("instruction");
   await Hive.openBox("userInfo");
-  
+}
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Display custom splash screen
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(create: (_) => ThemeProvider()),
+    ChangeNotifierProvider(create: (_) => ThemeIconProvider()),
+    ChangeNotifierProvider(create: (_) => ChatProvider()),
+  ], child: LoadingScreen()));
+  // Delay to simulate initialization tasks
+  await Future.delayed(Duration(seconds: 5));
+
+  // Remove native splash screen (if using a package)
+  FlutterNativeSplash.remove();
+
+  // Run initialization tasks concurrently
+  await _initDatabase();
+
+  // Navigate to main app after completion
 
   runApp(MultiProvider(
     providers: [
@@ -30,7 +52,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       routes: {
         SigninPage.routeName: (context) => SigninPage(),
-        
       },
       debugShowCheckedModeBanner: false,
       title: 'Chat Demo',
@@ -60,11 +81,16 @@ class MyApp extends StatelessWidget {
 class LoadingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child:
-            CircularProgressIndicator(), // Or your preferred loading indicator
-      ),
-    );
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Chat Demo',
+        theme: Provider.of<ThemeProvider>(context).themeData,
+        home: Scaffold(
+          body: Center(
+            child: Lottie.asset("assets/chat.json",
+                height: 100,
+                animate: true), // Or your preferred loading indicator
+          ),
+        ));
   }
 }
